@@ -3,7 +3,7 @@
 ## KrakenRF Changes:
 
 1) Removes broken aarch64 detection in CmakeLists
-2) Change FIR Decimate from using uint8 to using uint16 for decimation value. Allows us to speicfy decimation larger than 255
+2) Change FIR Decimate from using uint8 to using uint16 for decimation value. Allows us to specify decimation larger than 255
 
 ## KrakenRF Pi4 Compilation:
 mkdir build && cd build

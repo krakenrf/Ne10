@@ -1,5 +1,17 @@
 # README
 
+## KrakenRF Changes:
+
+1) Removes broken aarch64 detection in CmakeLists
+2) Change FIR Decimate from using uint8 to using uint16 for decimation value. Allows us to speicfy decimation larger than 255
+
+## KrakenRF Pi4 Compilation:
+mkdir build && cd build
+cmake -DNE10_LINUX_TARGET_ARCH=aarch64 -DGNULINUX_PLATFORM=ON -DCMAKE_C_FLAGS="-mfpu=neon-fp-armv8" ..
+make
+
+Copy libne10.a over to the Kraken heimdall _daq_core_ folder
+
 ## What’s Ne10?
 Ne10 is a library of common, useful functions that have been heavily optimised for ARM-based CPUs equipped with [NEON](https://www.arm.com/products/processors/technologies/neon.php) SIMD capabilities. It provides consistent, well-tested behaviour, allowing for painless integration into a wide variety of applications. The library currently focuses primarily around math, signal processing, image processing, and physics functions.
 

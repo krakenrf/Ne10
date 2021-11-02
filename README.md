@@ -7,7 +7,7 @@
 
 ## KrakenRF Pi4 Compilation:
 mkdir build && cd build
-cmake -DNE10_LINUX_TARGET_ARCH=aarch64 -DGNULINUX_PLATFORM=ON -DCMAKE_C_FLAGS="-mfpu=neon-fp-armv8" ..
+cmake -DNE10_LINUX_TARGET_ARCH=aarch64 -DGNULINUX_PLATFORM=ON -DCMAKE_C_FLAGS="-mcpu=cortex-a53 -mfloat-abi=hard -mfpu=neon-fp-armv8 -mtune=cortex-a72 -Ofast" .. 
 make
 
 Copy libne10.a over to the Kraken heimdall _daq_core_ folder

@@ -6,9 +6,7 @@
 2) Change FIR Decimate from using uint8 to using uint16 for decimation value. Allows us to specify decimation larger than 255
 
 ## KrakenRF Pi4 Compilation:
-mkdir build && cd build
-cmake -DNE10_LINUX_TARGET_ARCH=aarch64 -DGNULINUX_PLATFORM=ON -DCMAKE_C_FLAGS="-mcpu=cortex-a53 -mfloat-abi=hard -mfpu=neon-fp-armv8 -mtune=cortex-a72 -Ofast" .. 
-make
+mkdir build && cd build && cmake -DNE10_LINUX_TARGET_ARCH=aarch64 -DGNULINUX_PLATFORM=ON -DCMAKE_C_FLAGS="-mcpu=cortex-a53 -mfloat-abi=hard -mfpu=neon-fp-armv8 -mtune=cortex-a72 -Ofast" .. && make
 
 Copy libne10.a over to the Kraken heimdall _daq_core_ folder
 
